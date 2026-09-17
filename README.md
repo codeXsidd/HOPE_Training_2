@@ -4,7 +4,7 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 
 ---
 
-## 📁 Repository Structure
+## 📁 Repository & Documentation Map
 
 ```
 ├── Tree/
@@ -13,26 +13,43 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 │   ├── count_nodes.java         # Count total nodes in BST
 │   ├── level_order.java         # Level Order Traversal (BFS) using Queue
 │   ├── balance_tree.java        # Height calculation & Balance factor check
-│   └── README.md                # Detailed guide on Tree operations
+│   └── README.md                # 📖 Tree Module Documentation
 │
 ├── Queue/
 │   ├── linear_queue.java        # Linear Queue using Array (Fixed Size)
 │   ├── circular_queue.java      # Circular Queue using Array (Reuses slots)
 │   ├── linked_list_queue.java   # Queue using Singly Linked List (Dynamic)
 │   ├── queue.java               # Standard Queue implementation
-│   └── README.md                # Detailed guide on Queue types
+│   └── README.md                # 📖 Queue Module Documentation
 │
 ├── Stack/
 │   ├── array.java               # Fixed-size Stack using Array
-│   └── singly.java              # Dynamic Stack using Singly Linked List
+│   ├── singly.java              # Dynamic Stack using Singly Linked List
+│   └── README.md                # 📖 Stack Module Documentation
 │
 ├── LinkedList/
 │   ├── singlylist.java          # Singly Linked List (insert, delete, search, display)
-│   └── doublylist.java          # Doubly Linked List (bidirectional traversal, insert, delete)
+│   ├── doublylist.java          # Doubly Linked List (bidirectional traversal, insert, delete)
+│   └── README.md                # 📖 Linked List Module Documentation
 │
 ├── .gitignore                   # Excludes .class files and IDE configurations
-└── README.md                    # Main project documentation
+├── LICENSE                      # MIT License
+└── README.md                    # 📖 Main Project Documentation
 ```
+
+---
+
+## 📑 Project Documentation Index
+
+| Document | Location | Description |
+| :--- | :--- | :--- |
+| **Main Guide** | [`README.md`](README.md) | Complete project overview, architecture map, compilation and run instructions, and GitHub push workflow. |
+| **Tree Guide** | [`Tree/README.md`](Tree/README.md) | In-depth BST guide: Insertion, Deletion cases, DFS Traversals, BFS Level Order, Height calculation, and AVL balance factor. |
+| **Queue Guide** | [`Queue/README.md`](Queue/README.md) | Linear vs Circular vs Linked List Queue comparison, $O(1)$ complexities, and circular memory reuse explanation. |
+| **Stack Guide** | [`Stack/README.md`](Stack/README.md) | Array-based vs Linked-List-based Stack comparison, LIFO semantics, boundary checks, and overflow/underflow handling. |
+| **Linked List Guide** | [`LinkedList/README.md`](LinkedList/README.md) | Singly vs Doubly Linked List, bidirectional traversal, pointer maintenance, and algorithmic operations. |
+| **Git Ignore** | [`.gitignore`](.gitignore) | Excludes compiled `.class` binaries, `.vscode/`, `.idea/`, and temporary build artifacts. |
+| **License** | [`LICENSE`](LICENSE) | MIT open source software license. |
 
 ---
 
@@ -46,8 +63,6 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 | [`level_order.java`](Tree/level_order.java) | Breadth-First Search (BFS) level-order traversal using a Queue | `levelOrder()`, `levelOrderByLevel()` |
 | [`balance_tree.java`](Tree/balance_tree.java) | Computes subtree height and validates balance factor (`|left_h - right_h| <= 1`) | `height()`, `b_f()`, `isBalanced()` |
 
-> For code deep-dives, see the [Tree Documentation](Tree/README.md).
-
 ---
 
 ## 🚶 2. Queue Module (`Queue/`)
@@ -58,8 +73,6 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 | [`circular_queue.java`](Queue/circular_queue.java) | Circular Queue | Circular Array | Efficient index wrapping `(rear + 1) % capacity` to reuse slots |
 | [`linked_list_queue.java`](Queue/linked_list_queue.java) | Linked List Queue | Singly Linked List | Dynamically sized queue with $O(1)$ operations and no fixed overflow |
 | [`queue.java`](Queue/queue.java) | Circular Queue | Array | Standard circular queue implementation |
-
-> For code deep-dives, see the [Queue Documentation](Queue/README.md).
 
 ---
 
@@ -88,31 +101,25 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 javac LinkedList/*.java Queue/*.java Stack/*.java Tree/*.java
 ```
 
-### 2. Run Queue Operations
+### 2. Run Individual Programs
 ```bash
-# Linear Queue
+# Queue operations
 java Queue.linear_queue
-
-# Circular Queue
 java Queue.circular_queue
-
-# Linked List Queue
 java Queue.linked_list_queue
-```
 
-### 3. Run Tree Operations
-```bash
+# Tree operations
 java Tree.bst_all_operation
 java Tree.count_leaf_nodes
 java Tree.count_nodes
 java Tree.level_order
 java Tree.balance_tree
-```
 
-### 4. Run Stack & Linked List Operations
-```bash
+# Stack operations
 java Stack.array
 java Stack.singly
+
+# Linked List operations
 java LinkedList.singlylist
 java LinkedList.doublylist
 ```
@@ -120,8 +127,6 @@ java LinkedList.doublylist
 ---
 
 ## 🛠️ Pushing to GitHub
-
-To push your repository to GitHub:
 
 ```bash
 # 1. Add your remote repository (replace with your repository URL)
