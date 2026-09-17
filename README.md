@@ -1,6 +1,6 @@
 # Data Structures & Algorithms in Java
 
-A structured repository implementing fundamental Data Structures and Algorithms in Java, cleanly organized into topic-specific modules.
+A clean, modular repository implementing fundamental Data Structures and Algorithms in Java. Every file is self-contained with complete documentation, sample inputs, and an executable `main` method.
 
 ---
 
@@ -16,112 +16,100 @@ A structured repository implementing fundamental Data Structures and Algorithms 
 │   └── README.md                # Detailed guide on Tree operations
 │
 ├── Stack/
-│   ├── array.java               # Stack implementation using Array
-│   └── singly.java              # Stack implementation using Singly Linked List
+│   ├── array.java               # Fixed-size Stack using Array
+│   └── singly.java              # Dynamic Stack using Singly Linked List
 │
 ├── Queue/
-│   └── queue.java               # Queue implementation
+│   └── queue.java               # Circular Queue using Array
 │
 ├── LinkedList/
-│   ├── singlylist.java          # Singly Linked List implementation
-│   └── doublylist.java          # Doubly Linked List implementation
+│   ├── singlylist.java          # Singly Linked List (insert, delete, search, display)
+│   └── doublylist.java          # Doubly Linked List (bidirectional traversal, insert, delete)
 │
-├── .gitignore                   # Ignores compiled .class files and IDE configs
-└── README.md                    # Project documentation
+├── .gitignore                   # Excludes .class files and IDE configurations
+└── README.md                    # Main project documentation
 ```
 
 ---
 
-## 🌳 Tree Module (`Tree/`)
-
-The `Tree/` directory provides modular implementations of Binary Search Tree (BST) operations:
+## 🌳 1. Tree Module (`Tree/`)
 
 | File | Description | Key Methods |
 | :--- | :--- | :--- |
-| [`bst_all_operation.java`](Tree/bst_all_operation.java) | All-in-one BST implementation covering standard operations | `insert()`, `search()`, `delete()`, `inorder()`, `preorder()`, `postorder()`, `min()`, `height()`, `b_f()` |
-| [`count_leaf_nodes.java`](Tree/count_leaf_nodes.java) | Counts nodes that have 0 children (both left & right are `null`) | `leafCount()`, `countLeaves()` |
-| [`count_nodes.java`](Tree/count_nodes.java) | Counts total number of nodes present in the tree | `count()`, `countTotalNodes()` |
-| [`level_order.java`](Tree/level_order.java) | Breadth-First Search (BFS) level order traversal using a FIFO Queue | `levelOrder()`, `levelOrderByLevel()` |
-| [`balance_tree.java`](Tree/balance_tree.java) | Computes tree height and verifies if the tree satisfies height-balance criteria | `height()`, `b_f()`, `isBalanced()` |
+| [`bst_all_operation.java`](Tree/bst_all_operation.java) | Comprehensive BST implementation with insert, search, delete, traversals, and balance checks | `insert()`, `search()`, `delete()`, `inorder()`, `preorder()`, `postorder()`, `min()`, `height()`, `b_f()` |
+| [`count_leaf_nodes.java`](Tree/count_leaf_nodes.java) | Counts leaf nodes (`left == null && right == null`) via traversal & recursion | `leafCount()`, `countLeaves()` |
+| [`count_nodes.java`](Tree/count_nodes.java) | Counts total nodes in a binary tree | `count()`, `countTotalNodes()` |
+| [`level_order.java`](Tree/level_order.java) | Breadth-First Search (BFS) level-order traversal using a Queue | `levelOrder()`, `levelOrderByLevel()` |
+| [`balance_tree.java`](Tree/balance_tree.java) | Computes subtree height and validates balance factor (`|left_h - right_h| <= 1`) | `height()`, `b_f()`, `isBalanced()` |
 
-For full code explanations and examples, check out the [`Tree/README.md`](Tree/README.md).
-
----
-
-## 📚 Other Modules
-
-- **Stack (`Stack/`)**:
-  - `array.java`: Fixed-size stack with push, pop, peek, and overflow/underflow handling.
-  - `singly.java`: Dynamic stack backed by singly-linked nodes.
-- **Queue (`Queue/`)**:
-  - `queue.java`: First-In-First-Out (FIFO) queue operations.
-- **Linked List (`LinkedList/`)**:
-  - `singlylist.java`: Singly-linked list node and operations.
-  - `doublylist.java`: Doubly-linked list with bidirectional pointers.
+> For code deep-dives, see the [Tree Documentation](Tree/README.md).
 
 ---
 
-## 🚀 Getting Started
+## 🥞 2. Stack Module (`Stack/`)
 
-### Prerequisites
-- **Java Development Kit (JDK 8 or higher)** installed.
-- Verify installation:
-  ```bash
-  javac -version
-  java -version
-  ```
+| File | Implementation | Key Operations |
+| :--- | :--- | :--- |
+| [`array.java`](Stack/array.java) | Array-backed fixed stack | `push()`, `pop()`, `peek()`, `isEmpty()`, `isFull()`, `size()`, `display()` |
+| [`singly.java`](Stack/singly.java) | Linked-list-backed dynamic stack | `push()`, `pop()`, `peek()`, `isEmpty()`, `size()`, `display()` |
 
-### How to Compile & Run
+---
 
-You can compile and run any file from the project root:
+## 🚶 3. Queue Module (`Queue/`)
 
-#### 1. Compile All Tree Programs
+| File | Implementation | Key Operations |
+| :--- | :--- | :--- |
+| [`queue.java`](Queue/queue.java) | Efficient circular queue using an array | `enqueue()`, `dequeue()`, `peek()`, `isEmpty()`, `isFull()`, `size()`, `display()` |
+
+---
+
+## 🔗 4. Linked List Module (`LinkedList/`)
+
+| File | Implementation | Key Operations |
+| :--- | :--- | :--- |
+| [`singlylist.java`](LinkedList/singlylist.java) | Singly linked list | `insertAtBeginning()`, `insertAtEnd()`, `delete()`, `search()`, `display()` |
+| [`doublylist.java`](LinkedList/doublylist.java) | Doubly linked list | `insertAtBeginning()`, `insertAtEnd()`, `delete()`, `displayForward()`, `displayBackward()` |
+
+---
+
+## 🚀 How to Compile & Run
+
+### 1. Compile All Files at Once
 ```bash
-javac Tree/*.java
+javac LinkedList/*.java Queue/*.java Stack/*.java Tree/*.java
 ```
 
-#### 2. Run Individual Operations
+### 2. Run Individual Programs
 ```bash
-# Run All-in-one BST Operations
+# Tree operations
 java Tree.bst_all_operation
-
-# Run Leaf Node Counter
 java Tree.count_leaf_nodes
-
-# Run Total Node Counter
 java Tree.count_nodes
-
-# Run Level Order (BFS) Traversal
 java Tree.level_order
-
-# Run Balance Tree / Height Check
 java Tree.balance_tree
+
+# Stack operations
+java Stack.array
+java Stack.singly
+
+# Queue operations
+java Queue.queue
+
+# Linked List operations
+java LinkedList.singlylist
+java LinkedList.doublylist
 ```
 
 ---
 
-## 🛠️ GitHub Push Instructions
+## 🛠️ Pushing to GitHub
 
-If you are pushing this repository to GitHub for the first time:
+To push your code to your GitHub repository:
 
-1. **Initialize Git repository**:
-   ```bash
-   git init
-   ```
-2. **Stage all files**:
-   ```bash
-   git add .
-   ```
-3. **Commit changes**:
-   ```bash
-   git commit -m "Organize tree operations into modular files and add documentation"
-   ```
-4. **Link to your GitHub remote repository**:
-   ```bash
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-   ```
-5. **Push to GitHub**:
-   ```bash
-   git push -u origin main
-   ```
+```bash
+# 1. Add your remote repository (replace with your repository link)
+git remote add origin https://github.com/<username>/<repository-name>.git
+
+# 2. Push to the main branch
+git push -u origin main
+```
