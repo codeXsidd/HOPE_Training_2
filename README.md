@@ -15,12 +15,16 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 │   ├── balance_tree.java        # Height calculation & Balance factor check
 │   └── README.md                # Detailed guide on Tree operations
 │
+├── Queue/
+│   ├── linear_queue.java        # Linear Queue using Array (Fixed Size)
+│   ├── circular_queue.java      # Circular Queue using Array (Reuses slots)
+│   ├── linked_list_queue.java   # Queue using Singly Linked List (Dynamic)
+│   ├── queue.java               # Standard Queue implementation
+│   └── README.md                # Detailed guide on Queue types
+│
 ├── Stack/
 │   ├── array.java               # Fixed-size Stack using Array
 │   └── singly.java              # Dynamic Stack using Singly Linked List
-│
-├── Queue/
-│   └── queue.java               # Circular Queue using Array
 │
 ├── LinkedList/
 │   ├── singlylist.java          # Singly Linked List (insert, delete, search, display)
@@ -46,20 +50,25 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 
 ---
 
-## 🥞 2. Stack Module (`Stack/`)
+## 🚶 2. Queue Module (`Queue/`)
+
+| File | Type | Implementation | Key Highlights |
+| :--- | :--- | :--- | :--- |
+| [`linear_queue.java`](Queue/linear_queue.java) | Linear Queue | Static Array | Fixed-size queue showing pointer progression and reset logic |
+| [`circular_queue.java`](Queue/circular_queue.java) | Circular Queue | Circular Array | Efficient index wrapping `(rear + 1) % capacity` to reuse slots |
+| [`linked_list_queue.java`](Queue/linked_list_queue.java) | Linked List Queue | Singly Linked List | Dynamically sized queue with $O(1)$ operations and no fixed overflow |
+| [`queue.java`](Queue/queue.java) | Circular Queue | Array | Standard circular queue implementation |
+
+> For code deep-dives, see the [Queue Documentation](Queue/README.md).
+
+---
+
+## 🥞 3. Stack Module (`Stack/`)
 
 | File | Implementation | Key Operations |
 | :--- | :--- | :--- |
 | [`array.java`](Stack/array.java) | Array-backed fixed stack | `push()`, `pop()`, `peek()`, `isEmpty()`, `isFull()`, `size()`, `display()` |
 | [`singly.java`](Stack/singly.java) | Linked-list-backed dynamic stack | `push()`, `pop()`, `peek()`, `isEmpty()`, `size()`, `display()` |
-
----
-
-## 🚶 3. Queue Module (`Queue/`)
-
-| File | Implementation | Key Operations |
-| :--- | :--- | :--- |
-| [`queue.java`](Queue/queue.java) | Efficient circular queue using an array | `enqueue()`, `dequeue()`, `peek()`, `isEmpty()`, `isFull()`, `size()`, `display()` |
 
 ---
 
@@ -74,28 +83,36 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 
 ## 🚀 How to Compile & Run
 
-### 1. Compile All Files at Once
+### 1. Compile All Files
 ```bash
 javac LinkedList/*.java Queue/*.java Stack/*.java Tree/*.java
 ```
 
-### 2. Run Individual Programs
+### 2. Run Queue Operations
 ```bash
-# Tree operations
+# Linear Queue
+java Queue.linear_queue
+
+# Circular Queue
+java Queue.circular_queue
+
+# Linked List Queue
+java Queue.linked_list_queue
+```
+
+### 3. Run Tree Operations
+```bash
 java Tree.bst_all_operation
 java Tree.count_leaf_nodes
 java Tree.count_nodes
 java Tree.level_order
 java Tree.balance_tree
+```
 
-# Stack operations
+### 4. Run Stack & Linked List Operations
+```bash
 java Stack.array
 java Stack.singly
-
-# Queue operations
-java Queue.queue
-
-# Linked List operations
 java LinkedList.singlylist
 java LinkedList.doublylist
 ```
@@ -104,10 +121,10 @@ java LinkedList.doublylist
 
 ## 🛠️ Pushing to GitHub
 
-To push your code to your GitHub repository:
+To push your repository to GitHub:
 
 ```bash
-# 1. Add your remote repository (replace with your repository link)
+# 1. Add your remote repository (replace with your repository URL)
 git remote add origin https://github.com/<username>/<repository-name>.git
 
 # 2. Push to the main branch
