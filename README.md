@@ -7,6 +7,19 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 ## 📁 Repository & Documentation Map
 
 ```
+├── LeetCode/
+│   ├── 01_Singly_Linked_Lists/       # Singly Linked List problems (LC 206, 876, 203...)
+│   ├── 02_Fast_and_Slow_Pointers/    # Cycle & Pointer problems (LC 141, 142, 202...)
+│   ├── 03_Reordering_and_Merging/    # Reordering & Merging (LC 21, 143, 148...)
+│   ├── 04_Stack_Fundamentals/        # Stack LIFO & MinStack (LC 20, 155, 682...)
+│   ├── 05_Queue_and_Deque/           # Queue, Deque, Circular Queue (LC 232, 622, 933...)
+│   ├── 06_Stack_Queue_Applications/  # Monotonic stack & windowing (LC 739, 735, 394...)
+│   ├── 07_Binary_Tree_Foundations/   # Traversals & Depth (LC 144, 94, 145, 102...)
+│   ├── 08_Tree_Recursion/            # Balance, Diameter & Symmetry (LC 110, 543, 101...)
+│   ├── 09_Tree_Views_and_Levels/     # Views, Zigzag & Width (LC 199, 103, 637...)
+│   ├── 10_Tree_Paths_and_LCA/        # Paths, Sums & LCA (LC 124, 112, 236, 235...)
+│   └── README.md                     # 📖 Curated LeetCode Master Tracker (80 problems)
+│
 ├── Tree/
 │   ├── bst_all_operation.java   # Complete Binary Search Tree (BST) operations
 │   ├── count_leaf_nodes.java    # Count leaf nodes in BST
@@ -44,6 +57,7 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 | Document | Location | Description |
 | :--- | :--- | :--- |
 | **Main Guide** | [`README.md`](README.md) | Complete project overview, architecture map, compilation and run instructions, and GitHub push workflow. |
+| **LeetCode Guide** | [`LeetCode/README.md`](LeetCode/README.md) | 80 curated LeetCode problems organized into 10 topics with problem statements, solutions, and complexities. |
 | **Tree Guide** | [`Tree/README.md`](Tree/README.md) | In-depth BST guide: Insertion, Deletion cases, DFS Traversals, BFS Level Order, Height calculation, and AVL balance factor. |
 | **Queue Guide** | [`Queue/README.md`](Queue/README.md) | Linear vs Circular vs Linked List Queue comparison, $O(1)$ complexities, and circular memory reuse explanation. |
 | **Stack Guide** | [`Stack/README.md`](Stack/README.md) | Array-based vs Linked-List-based Stack comparison, LIFO semantics, boundary checks, and overflow/underflow handling. |
