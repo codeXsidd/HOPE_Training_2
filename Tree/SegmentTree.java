@@ -1,4 +1,6 @@
-class SegmentTree{
+package Tree;
+
+public class SegmentTree {
     static int[]seg_t;
 
     static void seg_build(int[]a, int l, int r, int v){
