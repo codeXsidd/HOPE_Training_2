@@ -11,6 +11,9 @@ This directory contains clean, modular Java implementations of Binary Search Tre
 3. [Count Total Nodes (`count_nodes.java`)](#3-count-total-nodes)
 4. [Level Order Traversal / BFS (`level_order.java`)](#4-level-order-traversal-bfs)
 5. [Balance Tree & Height Check (`balance_tree.java`)](#5-balance-tree--height-check)
+6. [AVL Tree (`AVL.java`)](#6-avl-tree)
+7. [Segment Tree (`SegmentTree.java`)](#7-segment-tree)
+8. [Fenwick Tree / Binary Indexed Tree (`FenwickTree.java`)](#8-fenwick-tree--binary-indexed-tree)
 
 ---
 
@@ -103,6 +106,35 @@ Measures tree height and determines whether a binary tree is height-balanced (si
 
 ---
 
+## 6. AVL Tree
+**File:** [`AVL.java`](AVL.java)
+
+Self-balancing binary search tree maintaining balance factor in $[-1, 1]$ via tree rotations:
+- Left Rotation (`leftrotate`) & Right Rotation (`rightrotate`)
+- LL, RR, LR, and RL imbalance corrections upon insertion
+
+---
+
+## 7. Segment Tree
+**File:** [`SegmentTree.java`](SegmentTree.java)
+
+Tree data structure for storing array intervals to query range sums and point updates:
+- **Build**: $O(N)$
+- **Range Query**: $O(\log N)$
+
+---
+
+## 8. Fenwick Tree / Binary Indexed Tree
+**File:** [`FenwickTree.java`](FenwickTree.java)
+
+Space-efficient tree structure using lowest set bit (`i & -i`) manipulation:
+- **Build**: $O(N)$
+- **Point Update**: $O(\log N)$
+- **Prefix Sum Query**: $O(\log N)$
+- **Range Sum Query**: $O(\log N)$ (using `prefixSum(R) - prefixSum(L - 1)`)
+
+---
+
 ## 💻 Running the Programs
 
 From the root project directory:
@@ -117,4 +149,6 @@ java Tree.count_leaf_nodes
 java Tree.count_nodes
 java Tree.level_order
 java Tree.balance_tree
+java Tree.AVL
+java Tree.FenwickTree
 ```
