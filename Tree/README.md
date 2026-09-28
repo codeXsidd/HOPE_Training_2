@@ -14,6 +14,7 @@ This directory contains clean, modular Java implementations of Binary Search Tre
 6. [AVL Tree (`AVL.java`)](#6-avl-tree)
 7. [Segment Tree (`SegmentTree.java`)](#7-segment-tree)
 8. [Fenwick Tree / Binary Indexed Tree (`FenwickTree.java`)](#8-fenwick-tree--binary-indexed-tree)
+9. [Max Heap (`Heap/max_heap.java`)](#9-max-heap)
 
 ---
 
@@ -135,13 +136,24 @@ Space-efficient tree structure using lowest set bit (`i & -i`) manipulation:
 
 ---
 
+## 9. Max Heap
+**File:** [`Heap/max_heap.java`](Heap/max_heap.java)
+
+Array-based implementation of a Binary Max-Heap satisfying the max-heap property (parent node $\ge$ children):
+- **Insert (`insert`)**: Adds element at end and sifts up (`heap_up`) in $O(\log N)$.
+- **Extract Max (`remove`)**: Replaces root with last element and sifts down (`heap_down`) in $O(\log N)$.
+- **Peek (`peek`)**: Returns the maximum element at the root in $O(1)$.
+- **Dynamic Resizing**: Automatically doubles internal array capacity when full.
+
+---
+
 ## 💻 Running the Programs
 
 From the root project directory:
 
 ```bash
 # Compile all files
-javac Tree/*.java
+javac Tree/*.java Tree/Heap/*.java
 
 # Run individual programs
 java Tree.bst_all_operation
@@ -151,4 +163,5 @@ java Tree.level_order
 java Tree.balance_tree
 java Tree.AVL
 java Tree.FenwickTree
+java Tree.Heap.max_heap
 ```
