@@ -15,6 +15,7 @@ This directory contains clean, modular Java implementations of Binary Search Tre
 7. [Segment Tree (`SegmentTree.java`)](#7-segment-tree)
 8. [Fenwick Tree / Binary Indexed Tree (`FenwickTree.java`)](#8-fenwick-tree--binary-indexed-tree)
 9. [Max Heap (`Heap/max_heap.java`)](#9-max-heap)
+10. [Trie / Prefix Tree (`Trie/trie.java`)](#10-trie--prefix-tree)
 
 ---
 
@@ -147,13 +148,24 @@ Array-based implementation of a Binary Max-Heap satisfying the max-heap property
 
 ---
 
+## 10. Trie / Prefix Tree
+**File:** [`Trie/trie.java`](Trie/trie.java)
+
+Tree data structure used for efficient retrieval of keys in a dataset of strings:
+- **Insert (`insert`)**: Adds a word character-by-character in $O(L)$ where $L$ is word length.
+- **Search (`search`)**: Finds whether an exact word exists in the dictionary in $O(L)$.
+- **Prefix Search (`startsWith`)**: Determines if any stored word starts with a given prefix in $O(L)$.
+- **Delete (`delete`)**: Recursively unmarks end-of-word flags and prunes unreferenced child nodes in $O(L)$.
+
+---
+
 ## 💻 Running the Programs
 
 From the root project directory:
 
 ```bash
 # Compile all files
-javac Tree/*.java Tree/Heap/*.java
+javac Tree/*.java Tree/Heap/*.java Tree/Trie/*.java
 
 # Run individual programs
 java Tree.bst_all_operation
@@ -162,6 +174,8 @@ java Tree.count_nodes
 java Tree.level_order
 java Tree.balance_tree
 java Tree.AVL
+java Tree.SegmentTree
 java Tree.FenwickTree
 java Tree.Heap.max_heap
+java Tree.Trie.trie
 ```

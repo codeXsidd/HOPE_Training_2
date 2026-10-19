@@ -23,11 +23,35 @@ public class SegmentTree {
         return left_ans+right_ans;
     }
 
-    public static void main(String[]args){
-        int[]a={1,2,3,4,5};
-        int n=a.length;
-        seg_t=new int[4*n];
-        seg_build(a, 0, n-1, 1);
-        System.out.println(query(1, 0, n-1, 0, 2));
+    // Point Update: updates value at pos (0-based) to new_val
+    static void update(int v, int tl, int tr, int pos, int new_val) {
+        if (tl == tr) {
+            seg_t[v] = new_val;
+            return;
+        }
+        int tm = (tl + tr) / 2;
+        if (pos <= tm) {
+            update(2 * v, tl, tm, pos, new_val);
+        } else {
+            update(2 * v + 1, tm + 1, tr, pos, new_val);
+        }
+        seg_t[v] = seg_t[2 * v] + seg_t[2 * v + 1];
+    }
+
+    public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4, 5};
+        int n = a.length;
+        seg_t = new int[4 * n];
+        seg_build(a, 0, n - 1, 1);
+
+        System.out.println("--- Segment Tree Range Sum & Point Update ---");
+        System.out.println("Initial array: [1, 2, 3, 4, 5]");
+        System.out.println("Range sum [0, 2] (1 + 2 + 3): " + query(1, 0, n - 1, 0, 2));
+        System.out.println("Range sum [1, 4] (2 + 3 + 4 + 5): " + query(1, 0, n - 1, 1, 4));
+
+        System.out.println("\nUpdating index 2 from 3 to 10...");
+        update(1, 0, n - 1, 2, 10);
+        System.out.println("New Range sum [0, 2] (1 + 2 + 10): " + query(1, 0, n - 1, 0, 2));
+        System.out.println("New Range sum [0, 4] (total sum): " + query(1, 0, n - 1, 0, 4));
     }
 }

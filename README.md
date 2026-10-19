@@ -26,7 +26,21 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 │   ├── count_nodes.java         # Count total nodes in BST
 │   ├── level_order.java         # Level Order Traversal (BFS) using Queue
 │   ├── balance_tree.java        # Height calculation & Balance factor check
+│   ├── contruct_tree.java       # Binary Tree construction from Level Order
+│   ├── AVL.java                 # Self-balancing AVL Tree (rotations, balance factor)
+│   ├── SegmentTree.java         # Segment Tree (range sum query, point update)
+│   ├── FenwickTree.java         # Binary Indexed Tree (prefix/range sums, updates)
+│   ├── Heap/
+│   │   └── max_heap.java        # Binary Max Heap (insert, remove, sift up/down)
+│   ├── Trie/
+│   │   └── trie.java            # Prefix Tree / Trie (insert, search, startsWith, delete)
 │   └── README.md                # 📖 Tree Module Documentation
+│
+├── Graph/
+│   ├── graph.java               # Weighted Undirected Graph (Adjacency List, BFS, DFS)
+│   ├── union_find.java          # Disjoint Set Union (Path Compression, Rank, Components)
+│   ├── practice.java            # Unweighted Graph representation
+│   └── README.md                # 📖 Graph Module Documentation
 │
 ├── Queue/
 │   ├── linear_queue.java        # Linear Queue using Array (Fixed Size)
@@ -58,7 +72,8 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 | :--- | :--- | :--- |
 | **Main Guide** | [`README.md`](README.md) | Complete project overview, architecture map, compilation and run instructions, and GitHub push workflow. |
 | **LeetCode Guide** | [`LeetCode/README.md`](LeetCode/README.md) | 80 curated LeetCode problems organized into 10 topics with problem statements, solutions, and complexities. |
-| **Tree Guide** | [`Tree/README.md`](Tree/README.md) | In-depth BST guide: Insertion, Deletion cases, DFS Traversals, BFS Level Order, Height calculation, and AVL balance factor. |
+| **Tree Guide** | [`Tree/README.md`](Tree/README.md) | Comprehensive Tree guide: BST, Leaf/Node counting, BFS Level Order, AVL self-balancing, Segment Tree, Fenwick Tree, Max Heap, and Trie. |
+| **Graph Guide** | [`Graph/README.md`](Graph/README.md) | Graph representations (Adjacency List), BFS & DFS traversals, and Disjoint Set Union (Union-Find) with path compression and rank. |
 | **Queue Guide** | [`Queue/README.md`](Queue/README.md) | Linear vs Circular vs Linked List Queue comparison, $O(1)$ complexities, and circular memory reuse explanation. |
 | **Stack Guide** | [`Stack/README.md`](Stack/README.md) | Array-based vs Linked-List-based Stack comparison, LIFO semantics, boundary checks, and overflow/underflow handling. |
 | **Linked List Guide** | [`LinkedList/README.md`](LinkedList/README.md) | Singly vs Doubly Linked List, bidirectional traversal, pointer maintenance, and algorithmic operations. |
@@ -69,17 +84,33 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 
 ## 🌳 1. Tree Module (`Tree/`)
 
-| File | Description | Key Methods |
+| File | Description | Key Methods / Highlights |
 | :--- | :--- | :--- |
 | [`bst_all_operation.java`](Tree/bst_all_operation.java) | Comprehensive BST implementation with insert, search, delete, traversals, and balance checks | `insert()`, `search()`, `delete()`, `inorder()`, `preorder()`, `postorder()`, `min()`, `height()`, `b_f()` |
 | [`count_leaf_nodes.java`](Tree/count_leaf_nodes.java) | Counts leaf nodes (`left == null && right == null`) via traversal & recursion | `leafCount()`, `countLeaves()` |
 | [`count_nodes.java`](Tree/count_nodes.java) | Counts total nodes in a binary tree | `count()`, `countTotalNodes()` |
 | [`level_order.java`](Tree/level_order.java) | Breadth-First Search (BFS) level-order traversal using a Queue | `levelOrder()`, `levelOrderByLevel()` |
-| [`balance_tree.java`](Tree/balance_tree.java) | Computes subtree height and validates balance factor (`|left_h - right_h| <= 1`) | `height()`, `b_f()`, `isBalanced()` |
+| [`balance_tree.java`](Tree/balance_tree.java) | Computes subtree height and validates balance factor (`\|left_h - right_h\| <= 1`) | `height()`, `b_f()`, `isBalanced()` |
+| [`contruct_tree.java`](Tree/contruct_tree.java) | Reconstructs binary tree from level order representation | `lvo()`, `inorder()`, `printLevelOrder()` |
+| [`AVL.java`](Tree/AVL.java) | Self-balancing BST maintaining balance factor in $[-1, 1]$ via rotations | `insert()`, `leftrotate()`, `rightrotate()`, `getBF()` |
+| [`SegmentTree.java`](Tree/SegmentTree.java) | Segment Tree for range sum queries and point updates in $O(\log N)$ | `seg_build()`, `query()`, `update()` |
+| [`FenwickTree.java`](Tree/FenwickTree.java) | Binary Indexed Tree (BIT) with linear build and prefix/range queries | `query()`, `update()`, `rangeSum()` |
+| [`Heap/max_heap.java`](Tree/Heap/max_heap.java) | Array-based Binary Max-Heap with dynamic capacity resizing | `insert()`, `remove()`, `peek()`, `heap_up()`, `heap_down()` |
+| [`Trie/trie.java`](Tree/Trie/trie.java) | Prefix Tree (Trie) for dictionary string storage and prefix retrieval | `insert()`, `search()`, `startsWith()`, `delete()` |
 
 ---
 
-## 🚶 2. Queue Module (`Queue/`)
+## 🕸️ 2. Graph Module (`Graph/`)
+
+| File | Type | Representation | Key Highlights |
+| :--- | :--- | :--- | :--- |
+| [`graph.java`](Graph/graph.java) | Weighted Undirected Graph | Adjacency List (`ArrayList<Edge>[]`) | BFS traversal (Queue), DFS traversal (Recursion), edge weight storage |
+| [`union_find.java`](Graph/union_find.java) | Disjoint Set Union (DSU) | Parent & Rank arrays | Path Compression, Union by Rank, component tracking, $O(\alpha(V))$ |
+| [`practice.java`](Graph/practice.java) | Unweighted Graph | Adjacency List (`ArrayList<Integer>[]`) | Fast adjacency list construction and neighbor display |
+
+---
+
+## 🚶 3. Queue Module (`Queue/`)
 
 | File | Type | Implementation | Key Highlights |
 | :--- | :--- | :--- | :--- |
@@ -90,7 +121,7 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 
 ---
 
-## 🥞 3. Stack Module (`Stack/`)
+## 🥞 4. Stack Module (`Stack/`)
 
 | File | Implementation | Key Operations |
 | :--- | :--- | :--- |
@@ -99,7 +130,7 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 
 ---
 
-## 🔗 4. Linked List Module (`LinkedList/`)
+## 🔗 5. Linked List Module (`LinkedList/`)
 
 | File | Implementation | Key Operations |
 | :--- | :--- | :--- |
@@ -112,15 +143,15 @@ A clean, modular repository implementing fundamental Data Structures and Algorit
 
 ### 1. Compile All Files
 ```bash
-javac LinkedList/*.java Queue/*.java Stack/*.java Tree/*.java
+javac LinkedList/*.java Queue/*.java Stack/*.java Tree/*.java Tree/Heap/*.java Tree/Trie/*.java Graph/*.java
 ```
 
 ### 2. Run Individual Programs
 ```bash
-# Queue operations
-java Queue.linear_queue
-java Queue.circular_queue
-java Queue.linked_list_queue
+# Graph operations
+java Graph.graph
+java Graph.union_find
+java Graph.practice
 
 # Tree operations
 java Tree.bst_all_operation
@@ -128,6 +159,17 @@ java Tree.count_leaf_nodes
 java Tree.count_nodes
 java Tree.level_order
 java Tree.balance_tree
+java Tree.contruct_tree
+java Tree.AVL
+java Tree.SegmentTree
+java Tree.FenwickTree
+java Tree.Heap.max_heap
+java Tree.Trie.trie
+
+# Queue operations
+java Queue.linear_queue
+java Queue.circular_queue
+java Queue.linked_list_queue
 
 # Stack operations
 java Stack.array
@@ -143,9 +185,10 @@ java LinkedList.doublylist
 ## 🛠️ Pushing to GitHub
 
 ```bash
-# 1. Add your remote repository (replace with your repository URL)
-git remote add origin https://github.com/<username>/<repository-name>.git
+# 1. Add changes and commit
+git add .
+git commit -m "Add Graph module, Trie, and enhanced Tree data structures"
 
 # 2. Push to the main branch
-git push -u origin main
+git push origin main
 ```
